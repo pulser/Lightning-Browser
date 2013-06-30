@@ -40,15 +40,6 @@
 				android:layout_marginLeft="20dp"
 			    />
 
-			<EditText android:id="@+id/agent" android:layout_width="wrap_content"
-				android:layout_height="56dp" android:layout_alignParentRight="true"
-				android:layout_marginRight="20dp"
-				android:layout_alignTop="@+id/textView2" android:layout_toRightOf="@+id/textView2"
-				android:ems="10" android:inputType="textUri" android:background="@drawable/book"
-				android:paddingLeft="10dp" android:paddingRight="10dp"
-				android:singleLine="true" />
-
-
 			<CheckBox android:id="@+id/flash" android:layout_width="match_parent"
 			    android:layout_marginRight="20dp"
 				android:layout_height="56dp" android:layout_below="@+id/password"
@@ -64,39 +55,73 @@
 				android:layout_marginLeft="20dp"
 			    />
 
+            <RadioGroup android:id="@+id/userAgentGrp"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/java"
+                android:orientation="vertical"
+                android:layout_alignRight="@+id/agent"
+                android:layout_alignLeft="@+id/textView2">
+
+            <RadioButton android:id="@+id/radioMobile"
+                 android:layout_width="wrap_content" android:layout_height="56dp"
+                 android:layout_marginRight="20dp"
+                 android:marqueeRepeatLimit="20" android:onClick="radioAgent"
+                 android:text="@string/mobile"
+                 android:layout_marginLeft="0dp"
+                 android:checked="false"/>
+
 			<RadioButton android:id="@+id/radioDesktop"
 				android:layout_width="match_parent" android:layout_height="56dp"
 				android:layout_marginRight="20dp"
-				android:layout_below="@+id/radioMobile" 
 				android:onClick="radioAgent" android:text="@string/desk" 
-				android:layout_marginLeft="20dp"
+				android:layout_marginLeft="0dp"
 			    />
 
 			<RadioButton android:id="@+id/radioCustom"
 				android:layout_width="match_parent" android:layout_height="56dp"
-				android:layout_below="@+id/radioDesktop" 
 				android:onClick="radioAgent" android:text="@string/custom" 
 				android:layout_marginRight="20dp"
-				android:layout_marginLeft="20dp"
+				android:layout_marginLeft="0dp"
+                />
+
+            </RadioGroup>
+
+            <EditText android:id="@+id/agent" android:layout_width="wrap_content"
+                  android:layout_height="56dp" android:layout_alignParentRight="true"
+                  android:layout_marginRight="20dp"
+                  android:layout_alignTop="@+id/textView2" android:layout_toRightOf="@+id/textView2"
+                  android:ems="10" android:inputType="textUri" android:background="@drawable/book"
+                  android:paddingLeft="10dp" android:paddingRight="10dp"
+                  android:singleLine="true" />
 			    />
 
-			<TextView android:id="@+id/textView2" android:layout_width="wrap_content"
-				android:layout_height="56dp" android:layout_alignParentLeft="true"
-				android:layout_below="@+id/radioCustom" android:gravity="center_vertical|center_horizontal"
-				android:paddingLeft="10dp" android:paddingRight="5dp" android:text="@string/agent" 
-				android:layout_marginLeft="20dp"/>
+            <TextView android:id="@+id/textView2" android:layout_width="wrap_content"
+                  android:layout_height="56dp" android:layout_alignParentLeft="true"
+                  android:layout_below="@+id/userAgentGrp" android:gravity="center_vertical|center_horizontal"
+                  android:paddingLeft="10dp" android:paddingRight="5dp" android:text="@string/agent"
+                  android:layout_marginLeft="20dp"/>
 
-			<TextView
-			    android:id="@+id/textView3"
-			    android:layout_width="wrap_content"
-			    android:layout_height="56dp"
-			    android:layout_alignParentLeft="true"
-			    android:layout_below="@+id/textView2"
-			    android:gravity="center_vertical|center_horizontal"
-			    android:paddingLeft="10dp"
-			    android:paddingRight="5dp"
-			    android:text="@string/home" 
-			    android:layout_marginLeft="20dp"/>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textView2"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:text="@string/home"
+                android:layout_marginLeft="20dp"/>
+
+                <EditText android:id="@+id/homePage" android:layout_width="wrap_content"
+                          android:layout_height="56dp" android:layout_alignBaseline="@+id/textView3"
+                          android:layout_alignBottom="@+id/textView3"
+                          android:layout_alignLeft="@+id/agent"
+                          android:layout_alignParentRight="true" android:background="@drawable/book"
+                          android:ems="10" android:inputType="textUri" android:paddingLeft="10dp"
+                          android:layout_marginRight="20dp"
+                          android:paddingRight="10dp" />
 
 			<CheckBox android:id="@+id/fullScreen" android:layout_width="match_parent"
 			    android:layout_marginRight="20dp"
@@ -112,16 +137,6 @@
 				android:layout_marginLeft="20dp"
 			    />
 
-			
-
-			<RadioButton android:id="@+id/radioMobile"
-				android:layout_width="match_parent" android:layout_height="56dp"
-				android:layout_marginRight="20dp"
-				android:layout_below="@+id/java" 
-				android:marqueeRepeatLimit="20" android:onClick="radioAgent"
-				android:text="@string/mobile" 
-				android:layout_marginLeft="20dp"
-			    />
 
 			<CheckBox android:id="@+id/saveTabs" android:layout_width="match_parent"
 				android:layout_height="56dp" android:layout_below="@+id/location"
@@ -129,18 +144,6 @@
 				 android:text="@string/saveTab" 
 				android:layout_marginLeft="20dp"
 			    />
-
-			<EditText android:id="@+id/homePage" android:layout_width="wrap_content"
-				android:layout_height="56dp" android:layout_alignBaseline="@+id/textView3"
-				android:layout_alignBottom="@+id/textView3"
-				android:layout_alignLeft="@+id/agent"
-				android:layout_alignParentRight="true" android:background="@drawable/book"
-				android:ems="10" android:inputType="textUri" android:paddingLeft="10dp"
-				android:layout_marginRight="20dp"
-				android:paddingRight="10dp">
-
-				
-			</EditText>
 
 			<CheckBox
 			    android:id="@+id/location"
